@@ -1,0 +1,9 @@
+README.md
+fido/__init__.py
+fido/fido.py
+usard_fido.egg-info/PKG-INFO
+usard_fido.egg-info/SOURCES.txt
+usard_fido.egg-info/dependency_links.txt
+usard_fido.egg-info/not-zip-safe
+usard_fido.egg-info/requires.txt
+usard_fido.egg-info/top_level.txt
