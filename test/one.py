@@ -1,10 +1,8 @@
 from fido import fido
 
-fido.fido()
+fido.fido(msg="junk")
 
 dog = fido.fido
 
-dog()
-dog()
-dog()
-dog()
+dog("Hi My name is Rigley!")
+

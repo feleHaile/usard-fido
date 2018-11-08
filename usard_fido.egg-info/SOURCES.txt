@@ -1,7 +1,6 @@
 MANIFEST.in
-README.md
+README.rst
 fido/__init__.py
-fido/conf.py
 fido/fido.py
 usard_fido.egg-info/PKG-INFO
 usard_fido.egg-info/SOURCES.txt

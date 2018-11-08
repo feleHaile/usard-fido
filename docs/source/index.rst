@@ -11,6 +11,7 @@ Welcome to usard-fido's documentation!
    :caption: Contents:
 
    api/index.rst
+   eng/index.rst
 
 
 Indices and tables
