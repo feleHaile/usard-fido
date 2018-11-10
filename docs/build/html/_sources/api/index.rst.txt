@@ -4,3 +4,4 @@ API Reference
   :maxdepth: 2
 
   fido.rst
+  bear.rst
