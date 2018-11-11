@@ -1,0 +1,171 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>fido.earth &#8212; usard-fido 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Engineering Notes" href="../eng/index.html" />
+    <link rel="prev" title="fido.ardtile" href="ardtile.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../eng/index.html" title="Engineering Notes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ardtile.html" title="fido.ardtile"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">usard-fido 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fido-earth">
+<h1>fido.earth<a class="headerlink" href="#fido-earth" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-fido.earth"></span><p>dogapi - provides a simple abstraction to talk to
+USGS EarthExporer and list scenes available</p>
+<dl class="class">
+<dt id="fido.earth.EarthExplorer">
+<em class="property">class </em><code class="descclassname">fido.earth.</code><code class="descname">EarthExplorer</code><span class="sig-paren">(</span><em>version='1.4.1'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#EarthExplorer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.EarthExplorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the EarthExplorer class that implements the request response code</p>
+<dl class="classmethod">
+<dt id="fido.earth.EarthExplorer.datasetfields">
+<em class="property">classmethod </em><code class="descname">datasetfields</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#EarthExplorer.datasetfields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.EarthExplorer.datasetfields" title="Permalink to this definition">¶</a></dt>
+<dd><p>dataset fields</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="fido.earth.EarthExplorer.datasets">
+<em class="property">classmethod </em><code class="descname">datasets</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#EarthExplorer.datasets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.EarthExplorer.datasets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="fido.earth.EarthExplorer.download">
+<em class="property">classmethod </em><code class="descname">download</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#EarthExplorer.download"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.EarthExplorer.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>EE download</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="fido.earth.EarthExplorer.downloadoptions">
+<em class="property">classmethod </em><code class="descname">downloadoptions</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#EarthExplorer.downloadoptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.EarthExplorer.downloadoptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="fido.earth.EarthExplorer.getorderproducts">
+<em class="property">classmethod </em><code class="descname">getorderproducts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#EarthExplorer.getorderproducts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.EarthExplorer.getorderproducts" title="Permalink to this definition">¶</a></dt>
+<dd><p>EE download</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fido.earth.EarthExplorer.grid2ll">
+<code class="descname">grid2ll</code><span class="sig-paren">(</span><em>path</em>, <em>row</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#EarthExplorer.grid2ll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.EarthExplorer.grid2ll" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns lat long from a path row - very handy</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="fido.earth.EarthExplorer.login">
+<em class="property">classmethod </em><code class="descname">login</code><span class="sig-paren">(</span><em>username</em>, <em>password=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#EarthExplorer.login"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.EarthExplorer.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>login - user and passwd come from dog_config ~/.dog/dog_config.json</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="fido.earth.EarthExplorer.search">
+<em class="property">classmethod </em><code class="descname">search</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#EarthExplorer.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.EarthExplorer.search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.earth.dprint">
+<code class="descclassname">fido.earth.</code><code class="descname">dprint</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/earth.html#dprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.earth.dprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>used to debug the code and print structures</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ardtile.html"
+                        title="previous chapter">fido.ardtile</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../eng/index.html"
+                        title="next chapter">Engineering Notes</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/earth.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../eng/index.html" title="Engineering Notes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ardtile.html" title="fido.ardtile"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">usard-fido 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Tony Butzer.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+    </div>
+  </body>
+</html>

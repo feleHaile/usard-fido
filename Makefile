@@ -8,3 +8,6 @@ publish:
 
 build:
 	sudo pip3 install -e .
+
+web:
+	(cd docs/build/html && python -m SimpleHTTPServer)

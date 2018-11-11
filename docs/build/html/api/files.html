@@ -1,0 +1,254 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>fido.files &#8212; usard-fido 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Engineering Notes" href="../eng/index.html" />
+    <link rel="prev" title="fido.earth" href="earth.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../eng/index.html" title="Engineering Notes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="earth.html" title="fido.earth"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">usard-fido 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-fido.files">
+<span id="fido-files"></span><h1>fido.files<a class="headerlink" href="#module-fido.files" title="Permalink to this headline">¶</a></h1>
+<p>Functions for working with files in python</p>
+<dl class="function">
+<dt id="fido.files.append">
+<code class="descclassname">fido.files.</code><code class="descname">append</code><span class="sig-paren">(</span><em>path</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append data to a text file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file
+data (str): File text</dd>
+<dt>Returns:</dt>
+<dd>int: Number of characters appended</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.appendb">
+<code class="descclassname">fido.files.</code><code class="descname">appendb</code><span class="sig-paren">(</span><em>path</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#appendb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.appendb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to a binary file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file
+data (str): File bytes</dd>
+<dt>Returns:</dt>
+<dd>int: Number of bytes appended</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.delete">
+<code class="descclassname">fido.files.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file</dd>
+<dt>Returns:</dt>
+<dd>bool: True if the file was deleted, False if not (with message logged)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.exists">
+<code class="descclassname">fido.files.</code><code class="descname">exists</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#exists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if a file exists.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file</dd>
+<dt>Returns:</dt>
+<dd>bool: True if the file exists, False if not</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.mkdirs">
+<code class="descclassname">fido.files.</code><code class="descname">mkdirs</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#mkdirs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.mkdirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensures the set of directories exist for the supplied filename.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>filename (str): Full path to where the file should exist</dd>
+<dt>Returns:</dt>
+<dd>Full file path if the directories were created or None</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.read">
+<code class="descclassname">fido.files.</code><code class="descname">read</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a text file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file</dd>
+<dt>Returns:</dt>
+<dd>str: File text</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.readb">
+<code class="descclassname">fido.files.</code><code class="descname">readb</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#readb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.readb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a binary file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file</dd>
+<dt>Returns:</dt>
+<dd>File bytes</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.readlines">
+<code class="descclassname">fido.files.</code><code class="descname">readlines</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#readlines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.readlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read lines from a text file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file</dd>
+<dt>Returns:</dt>
+<dd>list: File text</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.readlinesb">
+<code class="descclassname">fido.files.</code><code class="descname">readlinesb</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#readlinesb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.readlinesb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read lines from a binary file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file</dd>
+<dt>Returns:</dt>
+<dd>list: File bytes</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.subprocess_cmd">
+<code class="descclassname">fido.files.</code><code class="descname">subprocess_cmd</code><span class="sig-paren">(</span><em>command</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#subprocess_cmd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.subprocess_cmd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="fido.files.write">
+<code class="descclassname">fido.files.</code><code class="descname">write</code><span class="sig-paren">(</span><em>path</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to a text file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file
+data (str): File text</dd>
+<dt>Returns:</dt>
+<dd>int: Number of characters written</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="fido.files.writeb">
+<code class="descclassname">fido.files.</code><code class="descname">writeb</code><span class="sig-paren">(</span><em>path</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fido/files.html#writeb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fido.files.writeb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to a binary file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (str): Full path to file
+data (str): File bytes</dd>
+<dt>Returns:</dt>
+<dd>int: Number of bytes written</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="earth.html"
+                        title="previous chapter">fido.earth</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../eng/index.html"
+                        title="next chapter">Engineering Notes</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/files.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../eng/index.html" title="Engineering Notes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="earth.html" title="fido.earth"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">usard-fido 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Tony Butzer.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+    </div>
+  </body>
+</html>

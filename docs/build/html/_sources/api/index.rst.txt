@@ -3,5 +3,6 @@ API Reference
 .. toctree::
   :maxdepth: 2
 
-  fido.rst
-  bear.rst
+  ardtile.rst
+  earth.rst
+  files.rst

@@ -1,6 +1,6 @@
-fido.bear
+fido.earth
 =========
 
-.. automodule:: fido.bear
+.. automodule:: fido.earth
     :members:
     :undoc-members:

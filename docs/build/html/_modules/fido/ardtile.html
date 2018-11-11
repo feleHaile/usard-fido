@@ -1,0 +1,231 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>fido.ardtile &#8212; usard-fido 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">usard-fido 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for fido.ardtile</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot; ardtile is a module for wget of tiles &quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
+
+<span class="kn">from</span> <span class="nn">fido.files</span> <span class="k">import</span> <span class="n">subprocess_cmd</span>
+
+<div class="viewcode-block" id="Tile"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile">[docs]</a><span class="k">class</span> <span class="nc">Tile</span><span class="p">():</span>
+
+    <span class="n">extensions</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;SR&#39;</span><span class="p">:</span> <span class="s1">&#39;_SR.tar&#39;</span> <span class="p">}</span>
+    <span class="n">urld</span> <span class="o">=</span> <span class="s1">&#39;https://edclpdsftp.cr.usgs.gov/downloads/collections/l2-ard-tiles/h03v03/&#39;</span>
+    <span class="n">stagedir</span> <span class="o">=</span> <span class="s2">&quot;/data/h03v03&quot;</span>
+    
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+    <span class="c1"># get the md5 hash list</span>
+<div class="viewcode-block" id="Tile.get_md5_list"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.get_md5_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_md5_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+         <span class="n">md5list</span> <span class="o">=</span> <span class="s1">&#39;h03v03.md5_list&#39;</span>
+         <span class="n">myfile</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span> <span class="o">+</span> <span class="n">md5list</span>
+
+         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">myfile</span><span class="p">):</span>
+	         <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;yay the md5 file is here...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+         <span class="k">else</span><span class="p">:</span>
+	         <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Bummer!&quot;</span><span class="p">)</span>
+	         <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;go get it&quot;</span><span class="p">)</span>
+	         <span class="n">cmd</span> <span class="o">=</span> <span class="s1">&#39;wget &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">urld</span> <span class="o">+</span> <span class="n">md5list</span>
+	         <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess_cmd</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+	         <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Tile.get_file"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.get_file">[docs]</a>    <span class="k">def</span> <span class="nf">get_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="n">tmpdir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_tmpdir</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wgetfile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">tmpdir</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Tile.readlines"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.readlines">[docs]</a>    <span class="k">def</span> <span class="nf">readlines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Read lines from a text file.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path (str): Full path to file</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            list: File text</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
+             <span class="k">return</span> <span class="n">handle</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Tile.make_path"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.make_path">[docs]</a>    <span class="k">def</span> <span class="nf">make_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">file</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">ParseFileName</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="n">pathlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">sensor</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">acquision_date</span><span class="p">]</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pathlist</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Tile.untar_file"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.untar_file">[docs]</a>    <span class="k">def</span> <span class="nf">untar_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">file</span><span class="p">):</span>
+        <span class="n">tmpdir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmpdir_name</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span>
+        <span class="n">untarFile</span><span class="p">(</span><span class="n">file</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Tile.tmpdir_name"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.tmpdir_name">[docs]</a>    <span class="k">def</span> <span class="nf">tmpdir_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="s1">&#39;/data/&#39;</span>
+        <span class="n">tmppath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">tmpdir</span> <span class="o">=</span> <span class="n">root</span> <span class="o">+</span> <span class="n">tmppath</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Tile.make_tmpdir"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.make_tmpdir">[docs]</a>    <span class="k">def</span> <span class="nf">make_tmpdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">tmpdir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmpdir_name</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dir=&quot;</span><span class="p">,</span><span class="n">tmpdir</span><span class="p">)</span>
+        <span class="n">pushcmd</span> <span class="o">=</span> <span class="s2">&quot;mkdir -p &quot;</span> <span class="o">+</span> <span class="n">tmpdir</span>
+        <span class="n">subprocess_cmd</span><span class="p">(</span><span class="n">pushcmd</span><span class="p">)</span>
+        <span class="n">tmpdir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmpdir_name</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Tile.rm_tmpdir"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.rm_tmpdir">[docs]</a>    <span class="k">def</span> <span class="nf">rm_tmpdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;/opt/usard-fido&quot;</span><span class="p">)</span>
+        <span class="n">tmpdir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmpdir_name</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">pushcmd</span> <span class="o">=</span> <span class="s2">&quot;rm -fr &quot;</span> <span class="o">+</span> <span class="n">tmpdir</span>
+        <span class="n">subprocess_cmd</span><span class="p">(</span><span class="n">pushcmd</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Tile.get_file_list"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.get_file_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_file_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">criteria</span><span class="p">):</span>
+        <span class="n">mypath</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
+        <span class="n">onlyfiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">listdir</span><span class="p">(</span><span class="n">mypath</span><span class="p">)</span> <span class="k">if</span> <span class="n">isfile</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">mypath</span><span class="p">,</span> <span class="n">f</span><span class="p">))]</span>
+        <span class="n">found_files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">onlyfiles</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">criteria</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">found_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">found_files</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Tile.send_file_s3"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.Tile.send_file_s3">[docs]</a>    <span class="k">def</span> <span class="nf">send_file_s3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="s1">&#39;s3://ga-odc-eros-ard-west/&#39;</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;usard/&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">dest_file</span> <span class="o">=</span> <span class="n">bucket</span> <span class="o">+</span> <span class="n">path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">filename</span>
+        <span class="n">s3cp</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dest_file</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_wgetfile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">fname</span><span class="p">,</span> <span class="nb">dir</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;hello from wgetxml getting file &quot;</span> <span class="o">+</span> <span class="n">fname</span><span class="p">)</span>
+        <span class="n">fullfile</span> <span class="o">=</span> <span class="nb">dir</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">fname</span>
+        <span class="n">wgetfile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">urld</span> <span class="o">+</span> <span class="n">fname</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;wget -O &quot;</span> <span class="o">+</span> <span class="n">fullfile</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">wgetfile</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        <span class="n">subprocess_cmd</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ParseFileName"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.ParseFileName">[docs]</a><span class="k">class</span> <span class="nc">ParseFileName</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scene</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[:</span><span class="o">-</span><span class="mi">7</span><span class="p">]</span>
+        <span class="c1">## LC08_CU_003003_20130414_20170713_C01_V01_BT.tar</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sensor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hv</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acquision_date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processing_date</span><span class="p">,</span>\
+        <span class="bp">self</span><span class="o">.</span><span class="n">collection</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">long_extension</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="untarFile"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.untarFile">[docs]</a><span class="k">def</span> <span class="nf">untarFile</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello from untarFile decompressing file &quot;</span> <span class="o">+</span> <span class="n">fname</span><span class="p">)</span>
+    <span class="n">infile</span> <span class="o">=</span> <span class="n">fname</span>
+    <span class="n">pushcmd</span> <span class="o">=</span> <span class="s2">&quot;tar -xvf </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">infile</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pushcmd</span><span class="p">)</span>
+    <span class="n">subprocess_cmd</span><span class="p">(</span><span class="n">pushcmd</span><span class="p">)</span></div>
+    <span class="c1"># time.sleep(2)</span>
+    <span class="c1"># os.unlink(infile)</span>
+
+
+<div class="viewcode-block" id="s3cp"><a class="viewcode-back" href="../../api/ardtile.html#fido.ardtile.s3cp">[docs]</a><span class="k">def</span> <span class="nf">s3cp</span><span class="p">(</span><span class="n">fromfile</span><span class="p">,</span> <span class="n">tofile</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello from s3cp copying file &quot;</span> <span class="o">+</span> <span class="n">fromfile</span><span class="p">)</span>
+    <span class="n">infile</span> <span class="o">=</span> <span class="n">fromfile</span>
+    <span class="n">outfile</span> <span class="o">=</span> <span class="n">tofile</span>
+    <span class="n">pushcmd</span> <span class="o">=</span> <span class="s2">&quot;aws s3 cp </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pushcmd</span><span class="p">)</span>
+    <span class="n">subprocess_cmd</span><span class="p">(</span><span class="n">pushcmd</span><span class="p">)</span></div>
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">usard-fido 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Tony Butzer.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+    </div>
+  </body>
+</html>
