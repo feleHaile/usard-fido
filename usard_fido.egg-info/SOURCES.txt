@@ -1,9 +1,10 @@
 MANIFEST.in
 README.rst
 fido/__init__.py
-fido/bear.py
+fido/ardtile.py
 fido/earth.py
-fido/fido.py
+fido/files.py
+fido/wget.py
 usard_fido.egg-info/PKG-INFO
 usard_fido.egg-info/SOURCES.txt
 usard_fido.egg-info/dependency_links.txt

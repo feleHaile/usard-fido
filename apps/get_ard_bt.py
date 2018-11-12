@@ -11,7 +11,7 @@ def process_ard(sensor):
     t.get_md5_list()
 
     cnt = 0
-    max = 3
+    max = 3000
     for line in t.readlines('./h03v03.md5_list'):
         cksum,file = line.split()
         if (sensor in file) and ('BT'in file):
